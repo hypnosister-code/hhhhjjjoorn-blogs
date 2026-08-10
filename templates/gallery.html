@@ -12,7 +12,7 @@
         <tr>
             <td width="33%" valign="top">
                 <div class="char-frame" style="position: relative; overflow: hidden;">
-                    <img class="zoomable" src="{{ get_url(path='images/gal1.jpg') }}"
+                    <img src="{{ get_url(path='images/gal1.jpg') }}"
                          alt="Zdjęcie 1"
                          onerror="this.style.display='none'; this.parentNode.querySelector('.ph').style.display='flex';"
                          style="width: 100%; height: 140px; object-fit: cover; display: block; border: 0;">
@@ -23,7 +23,7 @@
             </td>
             <td width="33%" valign="top">
                 <div class="char-frame" style="position: relative; overflow: hidden;">
-                    <img class="zoomable" src="{{ get_url(path='images/gal2.jpg') }}"
+                    <img src="{{ get_url(path='images/gal2.jpg') }}"
                          alt="Zdjęcie 2"
                          onerror="this.style.display='none'; this.parentNode.querySelector('.ph').style.display='flex';"
                          style="width: 100%; height: 140px; object-fit: cover; display: block; border: 0;">
@@ -34,7 +34,7 @@
             </td>
             <td width="33%" valign="top">
                 <div class="char-frame" style="position: relative; overflow: hidden;">
-                    <img class="zoomable" src="{{ get_url(path='images/gal3.jpg') }}"
+                    <img src="{{ get_url(path='images/gal3.jpg') }}"
                          alt="Zdjęcie 3"
                          onerror="this.style.display='none'; this.parentNode.querySelector('.ph').style.display='flex';"
                          style="width: 100%; height: 140px; object-fit: cover; display: block; border: 0;">
@@ -49,7 +49,7 @@
         <tr>
             <td width="33%" valign="top">
                 <div class="char-frame" style="position: relative; overflow: hidden;">
-                    <img class="zoomable" src="{{ get_url(path='images/gal4.jpg') }}"
+                    <img src="{{ get_url(path='images/gal4.jpg') }}"
                          alt="Zdjęcie 4"
                          onerror="this.style.display='none'; this.parentNode.querySelector('.ph').style.display='flex';"
                          style="width: 100%; height: 140px; object-fit: cover; display: block; border: 0;">
@@ -60,7 +60,7 @@
             </td>
             <td width="33%" valign="top">
                 <div class="char-frame" style="position: relative; overflow: hidden;">
-                    <img class="zoomable" src="{{ get_url(path='images/gal5.jpg') }}"
+                    <img src="{{ get_url(path='images/gal5.jpg') }}"
                          alt="Zdjęcie 5"
                          onerror="this.style.display='none'; this.parentNode.querySelector('.ph').style.display='flex';"
                          style="width: 100%; height: 140px; object-fit: cover; display: block; border: 0;">
@@ -71,7 +71,7 @@
             </td>
             <td width="33%" valign="top">
                 <div class="char-frame" style="position: relative; overflow: hidden;">
-                    <img class="zoomable" src="{{ get_url(path='images/gal6.jpg') }}"
+                    <img src="{{ get_url(path='images/gal6.jpg') }}"
                          alt="Zdjęcie 6"
                          onerror="this.style.display='none'; this.parentNode.querySelector('.ph').style.display='flex';"
                          style="width: 100%; height: 140px; object-fit: cover; display: block; border: 0;">
@@ -82,34 +82,5 @@
             </td>
         </tr>
     </table>
-    <div class="zoom-overlay" id="zoomOverlay">
-        <img id="zoomImage" src="" alt="Powiększone zdjęcie">
-        <div class="close-text">Kliknij poza zdjęciem, aby zamknąć</div>
-    </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const overlay = document.getElementById('zoomOverlay');
-            const zoomImage = document.getElementById('zoomImage');
-            document.querySelectorAll('.zoomable').forEach(img => {
-                img.style.cursor = 'zoom-in';
-                img.addEventListener('click', function(event) {
-                    zoomImage.src = this.src;
-                    overlay.classList.add('active');
-                });
-            });
-            overlay.addEventListener('click', function(event) {
-                if (event.target === overlay) {
-                    overlay.classList.remove('active');
-                    zoomImage.src = '';
-                }
-            });
-            document.addEventListener('keydown', function(event) {
-                if (event.key === 'Escape') {
-                    overlay.classList.remove('active');
-                    zoomImage.src = '';
-                }
-            });
-        });
-    </script>
 </div>
 {% endblock content %}

@@ -13,11 +13,13 @@
                 <div class="diablo-frame-title">Najnowsze Wpisy</div>
                 <ul class="post-list">
                     {% set section = get_section(path="blog/_index.md") %}
-                    {% for page in section.pages | slice(end=5) %}
+                    {% for page in section.pages %}
+                    {% if loop.index <= 5 %}
                     <li>
                         <span class="post-date">[ {{ page.date | date(format="%Y-%m-%d") }} ]</span><br>
                         <span class="post-title"><a href="{{ page.permalink }}">{{ page.title }}</a></span>
                     </li>
+                    {% endif %}
                     {% endfor %}
                 </ul>
                 <div style="margin-top: 14px; text-align: right; font-size: 11px;">
@@ -52,9 +54,9 @@
                         <td width="38%" valign="top">
                             <!-- Ramka z avataarem w stylu ramki postaci Diablo -->
                             <div class="char-frame">
-                                <img src="{{ get_url(path='images/avatar.jpg') }}"
+                                <img class="avatar-img" src="{{ get_url(path='images/avatar.jpg') }}"
                                      alt="Mój avatar"
-                                     style="width: 100%; max-height: 110px; height: auto; object-fit: cover; display: block; border: 0;">
+                                     style="width: 100%; display: block;">
                             </div>
                         </td>
                         <td width="62%" valign="top" style="padding-left: 10px; font-size: 11px; line-height: 1.5;">
@@ -104,23 +106,23 @@
                     <tr>
                         <td width="33%" valign="top">
                             <div class="char-frame">
-                                <img src="{{ get_url(path='images/ig1.jpg') }}"
+                                <img class="instagram-thumb" src="{{ get_url(path='images/ig1.jpg') }}"
                                      alt="Instagram 1"
-                                     style="width: 100%; max-height: 90px; height: auto; object-fit: cover; display: block; border: 0;">
+                                     style="width: 100%; display: block;">
                             </div>
                         </td>
                         <td width="33%" valign="top">
                             <div class="char-frame">
-                                <img src="{{ get_url(path='images/ig2.jpg') }}"
+                                <img class="instagram-thumb" src="{{ get_url(path='images/ig2.jpg') }}"
                                      alt="Instagram 2"
-                                     style="width: 100%; max-height: 90px; height: auto; object-fit: cover; display: block; border: 0;">
+                                     style="width: 100%; display: block;">
                             </div>
                         </td>
                         <td width="33%" valign="top">
                             <div class="char-frame">
-                                <img src="{{ get_url(path='images/ig3.jpg') }}"
+                                <img class="instagram-thumb" src="{{ get_url(path='images/ig3.jpg') }}"
                                      alt="Instagram 3"
-                                     style="width: 100%; max-height: 90px; height: auto; object-fit: cover; display: block; border: 0;">
+                                     style="width: 100%; display: block;">
                             </div>
                         </td>
                     </tr>
