@@ -272,7 +272,9 @@
             text-align: center;
         }
         .char-frame img {
+            width: 100%;
             max-width: 100%;
+            height: auto;
             display: block;
         }
 
@@ -325,6 +327,10 @@
             .logo-text { font-size: 24px; letter-spacing: 3px; }
             body { padding: 8px; font-size: 11px; }
             .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .diablo-frame table { width: 100% !important; }
+            .diablo-frame td { display: block !important; width: 100% !important; }
+            .diablo-frame td + td { padding-left: 0 !important; }
+            .char-frame { margin-bottom: 12px; }
         }
     </style>
 </head>
@@ -396,13 +402,9 @@
                 <div class="diablo-frame-title">Aktualizacje</div>
                 <div class="updates-box">
                     <ul>
-                        
-                        
-                        <li>
-                            <strong>2026-08-10</strong> — <a href="https://hypnosister-code.github.io/hhhhjjjoorn-blogs/blog/pierwszy-wpis/">Krytyka życia</a>
-                        </li>
-                        
-                        
+                        <li><strong>2026-08-05</strong> — Nowy layout bloga w stylu retro!</li>
+                        <li><strong>2026-08-01</strong> — Pierwszy wpis opublikowany</li>
+                        <li><strong>2026-07-28</strong> — Blog uruchomiony na Zola</li>
                     </ul>
                 </div>
             </div>
@@ -424,12 +426,12 @@
                             <div class="char-frame">
                                 <img src="https://hypnosister-code.github.io/hhhhjjjoorn-blogs/images/avatar.jpg"
                                      alt="Mój avatar"
-                                     style="width: 100%; height: 110px; object-fit: cover; display: block; border: 0;">
+                                     style="width: 100%; max-height: 110px; height: auto; object-fit: cover; display: block; border: 0;">
                             </div>
                         </td>
                         <td width="62%" valign="top" style="padding-left: 10px; font-size: 11px; line-height: 1.5;">
                             <strong style="color: #ddddaa;">Hej!</strong><br><br>
-                            Jestem 20-letnim nastolatkiem, który po prostu próbuje swoich sił w różnych dziedzinach i pasjach, głównie opartych na kreatywności. Pasjonuję się światami fantasy, nauką języków obcych, tworzeniem biżuterii, projektowaniem stron internetowych oraz edycją i robieniem zdjęć.
+                            Jestem pasjonatem retro gier, książek fantasy i starego internetu. Ten blog to moje miejsce w sieci zainspirowane klimatem Diablo II.
                         </td>
                     </tr>
                 </table>
@@ -440,31 +442,28 @@
                     <div class="about-section">
                         <h3>Pasje</h3>
                         <ul>
-                            <li>Światy fantasy</li>
-                            <li>Nauka języków obcych</li>
-                            <li>Tworzenie biżuterii</li>
-                            <li>Tworzenie stron internetowych</li>
-                            <li>Edycja zdjęć</li>
-                            <li>Robienie zdjęć</li>
+                            <li>Gry RPG i hack'n'slash</li>
+                            <li>Literatura fantasy</li>
+                            <li>Stary internet & web design</li>
+                            <li>Fotografia</li>
                         </ul>
                     </div>
                     <div class="about-section">
                         <h3>Ulubione książki</h3>
                         <ul>
-                            <li>Friedrich Nietzsche — "Tak mówił Zaratustra"</li>
-                            <li>Andrzej Sapkowski — "Wiedźmin"</li>
-                            <li>J.R.R. Tolkien — "Silmarillion"</li>
-                            <li>Antoine de Saint-Exupéry — "Mały Książę"</li>
+                            <li>"Diablo: Legacy of Blood"</li>
+                            <li>"Wiedźmin" — A. Sapkowski</li>
+                            <li>"Duma i uprzedzenie"</li>
+                            <li>"Hobbit" — J.R.R. Tolkien</li>
                         </ul>
                     </div>
                     <div class="about-section">
                         <h3>Co lubię robić</h3>
                         <ul>
-                            <li>Nauka języków obcych</li>
-                            <li>Sluchanie muzyki</li>
-                            <li>Edytowanie zdjęć własnej roboty</li>
-                            <li>Chodzenie po lasach</li>
-                            <li>Tworzenie biżuterii</li>
+                            <li>Pisać o grach i książkach</li>
+                            <li>Programować w Rust i Pythonie</li>
+                            <li>Chodzić po górach</li>
+                            <li>Palić ogniska i grać w kości</li>
                         </ul>
                     </div>
                 </div>
@@ -479,21 +478,21 @@
                             <div class="char-frame">
                                 <img src="https://hypnosister-code.github.io/hhhhjjjoorn-blogs/images/ig1.jpg"
                                      alt="Instagram 1"
-                                     style="width: 100%; height: 90px; object-fit: cover; display: block; border: 0;">
+                                     style="width: 100%; max-height: 90px; height: auto; object-fit: cover; display: block; border: 0;">
                             </div>
                         </td>
                         <td width="33%" valign="top">
                             <div class="char-frame">
                                 <img src="https://hypnosister-code.github.io/hhhhjjjoorn-blogs/images/ig2.jpg"
                                      alt="Instagram 2"
-                                     style="width: 100%; height: 90px; object-fit: cover; display: block; border: 0;">
+                                     style="width: 100%; max-height: 90px; height: auto; object-fit: cover; display: block; border: 0;">
                             </div>
                         </td>
                         <td width="33%" valign="top">
                             <div class="char-frame">
                                 <img src="https://hypnosister-code.github.io/hhhhjjjoorn-blogs/images/ig3.jpg"
                                      alt="Instagram 3"
-                                     style="width: 100%; height: 90px; object-fit: cover; display: block; border: 0;">
+                                     style="width: 100%; max-height: 90px; height: auto; object-fit: cover; display: block; border: 0;">
                             </div>
                         </td>
                     </tr>
