@@ -1,9 +1,9 @@
-base_url = "https://twojanazwa.github.io"
+base_url = "https://hypnosister-code.github.io/hhhhjjjoorn-blogs"
 title = "MÓJ BLOG"
 
 # description removed by user request
 default_language = "pl"
-author = "Twój Nick"
+author = "hypnosister-code"
 compile_sass = false
 build_search_index = false
 
