@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+{% block title %}{{ config.title }} — Strona Główna{% endblock title %}
+{% block content %}
+<table width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <!-- ========================================================
+             LEWA KOLUMNA — Główna treść
+             ======================================================== -->
+        <td width="62%" valign="top" style="padding-right: 18px;">
+
+            <!-- Lista najnowszych wpisów -->
+            <div class="diablo-frame">
+                <div class="diablo-frame-title">Najnowsze Wpisy</div>
+                <ul class="post-list">
+                    {% set section = get_section(path="blog/_index.md") %}
+                    {% for page in section.pages %}
+                    {% if loop.index <= 5 %}
+                    <li>
+                        <span class="post-date">[ {{ page.date | date(format="%Y-%m-%d") }} ]</span><br>
+                        <span class="post-title"><a href="{{ page.permalink }}">{{ page.title }}</a></span>
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+                <div style="margin-top: 14px; text-align: right; font-size: 11px;">
+                    <a href="{{ get_url(path="@/blog/_index.md") }}">[ Zobacz wszystkie wpisy ]</a>
+                </div>
+            </div>
+
+            <!-- Panel aktualizacji -->
+            <div class="diablo-frame" style="margin-top: 18px;">
+                <div class="diablo-frame-title">Aktualizacje</div>
+                <div class="updates-box">
+                    <ul>
+                        {% for page in section.pages %}
+                        {% if loop.index <= 4 %}
+                        <li>
+                            <strong>{{ page.date | date(format="%Y-%m-%d") }}</strong> — <a href="{{ page.permalink }}">{{ page.title }}</a>
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+        </td>
+
+        <!-- ========================================================
+             PRAWA KOLUMNA — O mnie + Instagram
+             ======================================================== -->
+        <td width="38%" valign="top">
+
+            <!-- Sekcja O mnie -->
+            <div class="diablo-frame">
+                <div class="diablo-frame-title">O mnie</div>
+                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                    <tr>
+                        <td width="38%" valign="top">
+                            <!-- Ramka z avataarem w stylu ramki postaci Diablo -->
+                            <div class="char-frame">
+                                <img src="{{ get_url(path='images/avatar.jpg') }}"
+                                     alt="Mój avatar"
+                                     style="width: 100%; height: 110px; object-fit: cover; display: block; border: 0;">
+                            </div>
+                        </td>
+                        <td width="62%" valign="top" style="padding-left: 10px; font-size: 11px; line-height: 1.5;">
+                            <strong style="color: #ddddaa;">Hej!</strong><br><br>
+                            Jestem 20-letnim nastolatkiem, który po prostu próbuje swoich sił w różnych dziedzinach i pasjach, głównie opartych na kreatywności. Pasjonuję się światami fantasy, nauką języków obcych, tworzeniem biżuterii, projektowaniem stron internetowych oraz edycją i robieniem zdjęć.
+                        </td>
+                    </tr>
+                </table>
+
+                <hr class="hr-deco">
+
+                <div style="font-size: 11px;">
+                    <div class="about-section">
+                        <h3>Pasje</h3>
+                        <ul>
+                            <li>Światy fantasy</li>
+                            <li>Nauka języków obcych</li>
+                            <li>Tworzenie biżuterii</li>
+                            <li>Tworzenie stron internetowych</li>
+                            <li>Edycja zdjęć</li>
+                            <li>Robienie zdjęć</li>
+                        </ul>
+                    </div>
+                    <div class="about-section">
+                        <h3>Ulubione książki</h3>
+                        <ul>
+                            <li>Friedrich Nietzsche — "Tak mówił Zaratustra"</li>
+                            <li>Andrzej Sapkowski — "Wiedźmin"</li>
+                            <li>J.R.R. Tolkien — "Silmarillion"</li>
+                            <li>Antoine de Saint-Exupéry — "Mały Książę"</li>
+                        </ul>
+                    </div>
+                    <div class="about-section">
+                        <h3>Co lubię robić</h3>
+                        <ul>
+                            <li>Nauka języków obcych</li>
+                            <li>Sluchanie muzyki</li>
+                            <li>Edytowanie zdjęć własnej roboty</li>
+                            <li>Chodzenie po lasach</li>
+                            <li>Tworzenie biżuterii</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Instagram -->
+            <div class="diablo-frame" style="margin-top: 18px;">
+                <div class="diablo-frame-title">Instagram</div>
+                <table width="100%" cellspacing="6" cellpadding="0" border="0">
+                    <tr>
+                        <td width="33%" valign="top">
+                            <div class="char-frame">
+                                <img src="{{ get_url(path='images/ig1.jpg') }}"
+                                     alt="Instagram 1"
+                                     style="width: 100%; height: 90px; object-fit: cover; display: block; border: 0;">
+                            </div>
+                        </td>
+                        <td width="33%" valign="top">
+                            <div class="char-frame">
+                                <img src="{{ get_url(path='images/ig2.jpg') }}"
+                                     alt="Instagram 2"
+                                     style="width: 100%; height: 90px; object-fit: cover; display: block; border: 0;">
+                            </div>
+                        </td>
+                        <td width="33%" valign="top">
+                            <div class="char-frame">
+                                <img src="{{ get_url(path='images/ig3.jpg') }}"
+                                     alt="Instagram 3"
+                                     style="width: 100%; height: 90px; object-fit: cover; display: block; border: 0;">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </td>
+    </tr>
+</table>
+{% endblock content %}

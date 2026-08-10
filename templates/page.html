@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}{{ page.title }} — {{ config.title }}{% endblock title %}
+{% block content %}
+<div class="diablo-frame">
+    <div class="diablo-frame-title">{{ page.title }}</div>
+    {% if page.date %}
+    <div class="post-date" style="margin-bottom: 16px;">Opublikowano: {{ page.date | date(format="%Y-%m-%d %H:%M") }}</div>
+    {% endif %}
+    <div class="post-content">
+        {{ page.content | safe }}
+    </div>
+</div>
+
+<!-- Nawigacja Poprzedni / Następny -->
+<div class="post-nav">
+    <div>
+        {% if page.lighter %}
+        <a href="{{ page.lighter.permalink }}">&laquo; Poprzedni: {{ page.lighter.title }}</a>
+        {% endif %}
+    </div>
+    <div>
+        {% if page.heavier %}
+        <a href="{{ page.heavier.permalink }}">Następny: {{ page.heavier.title }} &raquo;</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}
