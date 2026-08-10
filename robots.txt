@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+Allow: /
+Sitemap: https://hypnosister-code.github.io/hhhhjjjoorn-blogs/sitemap.xml
