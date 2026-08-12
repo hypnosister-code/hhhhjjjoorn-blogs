@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RBQ31DH8N6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-RBQ31DH8N6');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wpisy — MÓJ BLOG</title>
@@ -274,8 +283,16 @@
         .char-frame img {
             width: 100%;
             max-width: 100%;
-            height: auto;
+            height: 140px;
+            object-fit: cover;
             display: block;
+            border: 0;
+        }
+        .avatar-img {
+            height: 110px;
+        }
+        .instagram-thumb {
+            height: 90px;
         }
 
         /* Galeria zoom */
@@ -331,6 +348,11 @@
             .diablo-frame td { display: block !important; width: 100% !important; }
             .diablo-frame td + td { padding-left: 0 !important; }
             .char-frame { margin-bottom: 12px; }
+            .char-frame img,
+            .avatar-img,
+            .instagram-thumb {
+                height: auto;
+            }
         }
     </style>
 </head>
